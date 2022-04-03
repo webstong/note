@@ -1,0 +1,11 @@
+1、如果你编写一个声明并初始化变量的多行 JavaScript 程序，你可以在初始化一个变量之后用 var 声明它，它仍然可以工作。这是由于变量的提升。但提升操作不再适用于 let 。如果将上面例子中的 var 替换成 let 将不起作用并引起一个错误。
+2、当你使用 var 时，可以根据需要多次声明相同名称的变量，但是 let 不能。 以下将有效：
+var myName = 'Chris';
+var myName = 'Bob';
+但是以下内容会在第二行引发错误：
+let myName = 'Chris';
+let myName = 'Bob';
+你必须这样做：
+let myName = 'Chris';
+myName = 'Bob';
+出于这些以及其他原因，我们建议您在代码中尽可能多地使用 let，而不是 var。因为没有理由使用 var，除非您需要用代码支持旧版本的 Internet Explorer (它直到第 11 版才支持 let ，现代的 Windows Edge 浏览器支持的很好)。
